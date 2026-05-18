@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Date 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Cairo',sans-serif;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#ff9a9e 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#fbc2eb 0%,transparent 30%),
+    linear-gradient(135deg,#141e30,#243b55);
+
+    position:relative;
+}
+
+/* =========================
+   القلوب
+========================= */
+
+.hearts{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:0;
+}
+
+.heart{
+
+    position:absolute;
+
+    font-size:25px;
+
+    opacity:.15;
+
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* =========================
+   الكارد
+========================= */
+
+.card{
+
+    width:90%;
+
+    max-width:520px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    padding:40px 30px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,.08),
+    0 0 80px rgba(255,0,128,.15);
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+}
+
+.card::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.card::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:20px;
+}
+
+/* =========================
+   العنوان
+========================= */
+
+.icon{
+
+    font-size:75px;
+
+    margin-bottom:10px;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+}
+
+h1{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+
+    color:#f1f1f1;
+
+    line-height:2;
+
+    font-size:17px;
+}
+
+.highlight{
+
+    color:#ffb3c6;
+
+    font-weight:bold;
+}
+
+/* =========================
+   الأزرار
+========================= */
+
+.btn-container{
+
+    margin-top:40px;
+
+    position:relative;
+
+    height:90px;
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:'Cairo',sans-serif;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+#yesBtn{
+
+    background:linear-gradient(45deg,#ff4d6d,#ff758f);
+
+    color:white;
+
+    padding:15px 45px;
+
+    border-radius:50px;
+
+    font-size:20px;
+}
+
+#yesBtn:hover{
+
+    transform:scale(1.08);
+}
+
+#noBtn{
+
+    position:absolute;
+
+    right:20px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    padding:13px 35px;
+
+    border-radius:50px;
+
+    font-size:18px;
+}
+
+/* =========================
+   الصفحة التانية
+========================= */
+
+.success-view{
+
+    display:none;
+}
+
+.success-title{
+
+    color:white;
+
+    font-size:35px;
+
+    margin-bottom:10px;
+}
+
+.success-text{
+
+    color:#f1f1f1;
+
+    line-height:2;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   الفورم
+========================= */
+
+.input-box{
+
+    margin-top:18px;
+
+    text-align:right;
+}
+
+.input-box label{
+
+    color:white;
+
+    display:block;
+
+    margin-bottom:8px;
+}
+
+.input-box input,
+.input-box textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-family:'Cairo',sans-serif;
+
+    outline:none;
+}
+
+.input-box textarea{
+
+    resize:none;
+
+    height:100px;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+
+    color:rgba(255,255,255,.6);
+}
+
+/* =========================
+   زرار submit
+========================= */
+
+.finishBtn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    background:linear-gradient(45deg,#ff4d6d,#ff758f);
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    box-shadow:0 10px 25px rgba(255,77,109,.35);
+}
+
+.finishBtn:hover{
+
+    transform:scale(1.03);
+}
+
+/* =========================
+   الرسالة النهائية
+========================= */
+
+.final-message{
+
+    display:none;
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.08);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    color:white;
+
+    line-height:2;
+}
+
+/* =========================
+   Popup الصورة
+========================= */
+
+.photo-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fadeIn .3s ease;
+}
+
+.photo-box{
+
+    position:relative;
+
+    animation:scaleIn .35s ease;
+}
+
+.big-photo{
+
+    width:320px;
+
+    max-width:90vw;
+
+    border-radius:25px;
+
+    border:4px solid white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.close-photo{
+
+    position:absolute;
+
+    top:-15px;
+
+    right:-15px;
+
+    width:40px;
+
+    height:40px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes scaleIn{
+
+    from{
+        transform:scale(.6);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+@media(max-width:500px){
+
+    h1{
+        font-size:28px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="card">
+
+    <!-- الصفحة الأولى -->
+
+    <div id="inviteView">
+
+        <div class="icon">💌</div>
+
+        <h1>تيجي نخرج Date؟ 💖</h1>
+
+        <p class="subtitle">
+
+            <span class="highlight">
+            بقالي فترة نفسي أقولك 😅
+            </span>
+
+            <br><br>
+
+            و حاسس إن اليوم ده هيبقى مختلف ✨💕
+
+        </p>
+
+        <div class="btn-container">
+
+            <button id="yesBtn"
+            onclick="acceptInvite()">
+
+                موافقة ✨
+
+            </button>
+
+            <button id="noBtn"
+            onmouseover="moveButton()">
+
+                لأ 🙄
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- الصفحة التانية -->
+
+    <div class="success-view"
+    id="successView">
+
+        <div class="icon">🌙💖</div>
+
+        <h2 class="success-title">
+
+            أخيراً وافقتي ✨
+
+        </h2>
+
+        <p class="success-text">
+
+            اختاري اليوم اللي يناسبك ✨<br>
+
+            والمكان اللي تحبيه 🎡<br>
+
+            والأغاني اللي بتحبيها 🎶<br><br>
+
+            والباقي كله عليّا 💖
+
+        </p>
+
+        <form id="dateForm">
+
+            <div class="input-box">
+
+                <label>
+                    📅 التاريخ
+                </label>
+
+                <input type="date"
+                id="dateInput">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>
+                    📍 المكان
+                </label>
+
+                <input type="text"
+                id="placeInput"
+                placeholder="اكتبي المكان اللي تحبيه ✨">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>
+                    🎶 الأغاني
+                </label>
+
+                <textarea
+                id="songsInput"
+                placeholder="الأغاني اللي بتحبيها 💕"></textarea>
+
+            </div>
+
+            <button type="submit"
+            class="finishBtn">
+
+                Submit 💖
+
+            </button>
+
+        </form>
+
+        <div class="final-message"
+        id="finalMessage"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+   العناصر
+========================= */
+
+const noBtn =
+document.getElementById("noBtn");
+
+const inviteView =
+document.getElementById("inviteView");
+
+const successView =
+document.getElementById("successView");
+
+const finalMessage =
+document.getElementById("finalMessage");
+
+const form =
+document.getElementById("dateForm");
+
+/* =========================
+   الصور
+========================= */
+
+/*
+حط لينكات صورك هنا 👇
+بدل كل لينك باللينك بتاع الصورة بتاعتك
+*/
+
+const romanticPhotos = [
+
+"https://pbs.twimg.com/media/Ei9LysMXgAExwSD.jpg",
+
+"https://arabmeems.com/wp-content/uploads/2020/07/EMgL8F4WsAA7NeJ-780x470.jpg",
+"https://arabmeems.com/wp-content/uploads/2020/07/20200624_133959.jpg",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5ChmhGIDRyvNiBpdUlMvtMjPMjXXaj3SRQ&s"
+
+];
+
+/* عداد الصور */
+
+let currentPhoto = 0;
+
+/* =========================
+   زرار لأ
+========================= */
+
+function moveButton(){
+
+    let maxX =
+    window.innerWidth -
+    noBtn.offsetWidth - 20;
+
+    let maxY =
+    window.innerHeight -
+    noBtn.offsetHeight - 20;
+
+    let x = Math.random() * maxX;
+
+    let y = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+
+    noBtn.style.left = x + "px";
+
+    noBtn.style.top = y + "px";
+
+    showBigPhoto();
+}
+
+/* =========================
+   صورة Popup
+========================= */
+function showBigPhoto(){
+
+    photoOpened = true;
+
+    if(currentPhoto >= romanticPhotos.length){
+
+        currentPhoto = 0;
+    }
+
+    const overlay =
+    document.createElement("div");
+
+    overlay.className =
+    "photo-overlay";
+
+    const box =
+    document.createElement("div");
+
+    box.className =
+    "photo-box";
+
+    const closeBtn =
+    document.createElement("div");
+
+    closeBtn.className =
+    "close-photo";
+
+    closeBtn.innerHTML = "✖";
+
+    const img =
+    document.createElement("img");
+
+    img.className =
+    "big-photo";
+
+    img.src =
+    romanticPhotos[currentPhoto];
+
+    const text =
+    document.createElement("div");
+
+    text.style.marginTop = "20px";
+
+    text.style.textAlign = "center";
+
+    text.style.color = "white";
+
+    text.style.fontFamily = "Cairo";
+
+    text.style.lineHeight = "2";
+
+    text.style.fontSize = "22px";
+
+  text.innerHTML = `
+
+${
+currentPhoto === 0 ?
+
+`
+
+<div style="
+font-size:32px;
+font-weight:bold;
+color:#ff758f;
+">
+STOP MESSING WITH ME
+</div>
+
+<div style="
+margin-top:12px;
+font-size:28px;
+font-weight:bold;
+">
+والله لو رفضتي
+</div>
+
+<div style="
+font-size:34px;
+color:#ffb3c6;
+font-weight:800;
+">
+هروح اتجوز الألماني
+</div>
+
+<div style="
+margin-top:15px;
+font-size:24px;
+color:#ddd;
+">
+الألماني شاخر انا مالي يعم 💀
+</div>
+
+`
+
+:
+
+currentPhoto === 1 ?
+
+`
+
+<div style="
+font-size:34px;
+font-weight:bold;
+color:#ff758f;
+">
+انا زعلت 💔
+</div>
+
+<div style="
+margin-top:15px;
+font-size:28px;
+font-weight:bold;
+">
+انتي بتلعبي بقلبي لي 😔
+</div>
+
+<div style="
+margin-top:15px;
+font-size:30px;
+color:#ffb3c6;
+font-weight:800;
+">
+قلبي بيعيط دلوقت 😭
+</div>
+
+`
+
+:
+
+
+
+currentPhoto === 2 ? 
+
+`
+
+<div style="
+font-size:30px;
+font-weight:bold;
+color:#ff758f;
+">
+خلاص راحت عليكي 💔
+</div>
+
+<div style="
+margin-top:15px;
+font-size:26px;
+font-weight:bold;
+">
+عزومة و شمع و كل حاجة 😔
+</div>
+
+<div style="
+margin-top:10px;
+font-size:28px;
+color:#ffb3c6;
+font-weight:800;
+">
+و انتي اختارتي تعذبي قلبي
+</div>
+
+<div style="
+margin-top:15px;
+font-size:30px;
+color:#fff;
+font-weight:bold;
+">
+قلبي اتكسر فعلاً 💔
+</div>
+
+`
+
+:
+
+currentPhoto === 3 ?
+
+`
+
+<div style="
+font-size:32px;
+font-weight:bold;
+color:#ff758f;
+">
+يا نهار اسود 😭
+</div>
+
+<div style="
+margin-top:15px;
+font-size:26px;
+font-weight:bold;
+">
+انا شايل الورد دا بقالي كتير 🌹
+</div>
+
+<div style="
+margin-top:12px;
+font-size:28px;
+color:#ffb3c6;
+font-weight:800;
+">
+و انتي بتلعبي يستي 😩
+</div>
+
+<div style="
+margin-top:15px;
+font-size:28px;
+color:#fff;
+font-weight:bold;
+">
+ارحميني... ايدي وجعتني 💔
+</div>
+
+`
+
+:
+
+`
+
+<div style="
+font-size:28px;
+font-weight:bold;
+color:white;
+">
+💕
+</div>
+
+`
+}
+
+`;
+
+    currentPhoto++;
+
+    box.appendChild(closeBtn);
+
+    box.appendChild(img);
+
+    box.appendChild(text);
+
+    overlay.appendChild(box);
+
+    document.body.appendChild(overlay);
+
+    closeBtn.onclick = function(){
+
+        overlay.remove();
+
+        photoOpened = false;
+    };
+
+    overlay.onclick = function(e){
+
+        if(e.target === overlay){
+
+            overlay.remove();
+
+            photoOpened = false;
+        }
+    };
+}
+/* =========================
+   موافقة
+========================= */
+
+function acceptInvite(){
+
+    inviteView.style.display =
+    "none";
+
+    successView.style.display =
+    "block";
+
+    launchConfetti();
+}
+
+/* =========================
+   submit
+========================= */
+
+form.addEventListener("submit",
+function(e){
+
+    e.preventDefault();
+
+    let date =
+    document.getElementById("dateInput").value;
+
+    let place =
+    document.getElementById("placeInput").value;
+
+    let songs =
+    document.getElementById("songsInput").value;
+
+    finalMessage.style.display =
+    "block";
+
+    finalMessage.innerHTML =
+
+    `
+    ✨ خلاص اتفقنا ✨ <br><br>
+
+    📅 التاريخ:
+    ${date || "لسه متحددش"} <br><br>
+
+    📍 المكان:
+    ${place || "مفاجأة 😌"} <br><br>
+
+    🎶 الأغاني:
+    ${songs || "ذوقك أكيد جامد 💖"} <br><br>
+
+    والباقي كله عليّا ✨💕
+    `;
+});
+
+/* =========================
+   القلوب
+========================= */
+
+const heartsContainer =
+document.querySelector(".hearts");
+
+function createHeart(){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className =
+    "heart";
+
+    const hearts =
+    ["💖","💕","💘","💞","💗"];
+
+    heart.innerHTML =
+    hearts[
+    Math.floor(
+    Math.random() *
+    hearts.length
+    )];
+
+    heart.style.left =
+    Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+    (20 + Math.random()*30)
+    + "px";
+
+    heart.style.animationDuration =
+    (6 + Math.random()*5)
+    + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },10000);
+}
+
+setInterval(createHeart,400);
+
+/* =========================
+   الكونفيتي
+========================= */
+
+function launchConfetti(){
+
+    for(let i=0;i<100;i++){
+
+        let conf =
+        document.createElement("div");
+
+        conf.style.position =
+        "fixed";
+
+        conf.style.width =
+        "10px";
+
+        conf.style.height =
+        "10px";
+
+        conf.style.borderRadius =
+        "50%";
+
+        conf.style.background =
+        `hsl(${Math.random()*360},
+        100%,70%)`;
+
+        conf.style.left =
+        Math.random()*100 + "vw";
+
+        conf.style.top =
+        "-20px";
+
+        conf.style.zIndex =
+        "999";
+
+        document.body.appendChild(conf);
+
+        setTimeout(function(){
+
+            conf.style.transition =
+            "3s";
+
+            conf.style.transform =
+            `translateY(110vh)
+            translateX(${Math.random()*200-100}px)
+            rotate(${Math.random()*720}deg)`;
+
+            conf.style.opacity = "0";
+
+        },10);
+
+        setTimeout(function(){
+
+            conf.remove();
+
+        },3000);
+    }
+}
+
+</script>
+
+</body>
+</html>
